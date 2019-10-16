@@ -16,13 +16,13 @@ html, body, div, img,h1 {
     height:auto;
     
 }
-.wrapper{
+/*.wrapper{
     position:fixed;
     width:100%;
     margin:0;
     padding:0;
     position:relative;
-}
+}*/
 .header{
 	flex:7;
 }
@@ -163,12 +163,19 @@ html, body, div, img,h1 {
 	font-size:30px;
 	margin-bottom:18px;
 }
+
+.error { 
+    display: none;
+    color:red;
+}
+
 .contact-items input[type="text"],input[type="email"],input[type="tel"]{
     border-radius:10px;
     margin-bottom:15px;
     padding:15px;
     width:50%;
 }
+
 
 .contact-item:hover{
     box-shadow:0 0 10px 4px #38aa0b;
@@ -233,6 +240,29 @@ html, body, div, img,h1 {
 	padding:1% 0;
 }
 
+/* About us paage style*/
+
+.about{
+    width:80%;
+    margin:auto;
+    border:2px;
+    box-shadow:0 0 10px 4px #e1e6df;
+    height:80vh;
+
+}    
+.about h1{
+padding:20px 0;
+text-align:center;
+}
+
+.about p{
+    text-indent:20px;
+    font-weight: bold;
+    font-size:20px;
+}
+.about ul li{
+	padding:1% 0;
+}
 @media all and (max-width:800px){
 
 .container{
