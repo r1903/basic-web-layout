@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>from Oraganic farm</title>
-		<link rel = "stylesheet" type = "text/css" href ="mywebstyle.css" />
+        <link rel = "stylesheet" type = "text/css" href ="mywebstyle.css" />
     </head>
     
 <style> 
@@ -13,7 +13,6 @@
 .header h1::after{
     content:'"Farm to consumers"';
 	color:white;
-  /*  margin-right:600px;*/
 	font-size:20px;
     display:block;
     text-align:center;
@@ -52,15 +51,35 @@
 	        </ul>
         </nav>	
         <main class="contact">
-                <section class="contact-items">
+                <form class="contact-items" >
                     <h2>Contact Us</h2>
-                    <input type="text" class="contact-item" placeholder="Name..." required autofocus>
-                    <input type="tel" class="contact-item" placeholder="Phone number..." required>
+                    <input type="text" class="contact-item" placeholder="Name..." minlength="3" required autofocus>
+                    <span class="error"> invalid name</span>
+                    <input type="tel" class="contact-item" placeholder="Phone number..." minlength="10" pattern="\d+" required>
                     <input type="email" class="contact-item" placeholder="Email..." required>
                     <textarea cols="30" rows="10" class="contact-item"></textarea>
                     <input type="submit" value="Submit" class="contact-item-btn">
-                </section>
+                </form>
             </main>
-    </body>
+       
+       <script>
+                const name = document.querySelectorAll(".contact-item")[0];
+                const form = document.querySelector('.contact-items');
+               
+                form.addEventListener('submit', (e) => {
+                    let error ="";
+                    if (name.value.trim() == "") {
+                        name.style.border = "solid 2px red";
+                        error = "You should enter name";
+                    }
+                    
+                    if(error){
+                    e.preventDefault();
+                    document.querySelector(".error").style.display = "block";
+                    }
+                })
+                
+        </script>
+        </body>
 
 </html>
